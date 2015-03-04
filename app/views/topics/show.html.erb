@@ -22,6 +22,11 @@
      <%= link_to "Edit bookmark", edit_topic_bookmark_path(@topic, bookmark), class: "btn btn-danger"  %>
      <%= link_to "Destroy bookmark", [@topic, bookmark], method: :delete, class: "btn btn-danger" %>
     </p>
+
+    <% if false %>
+     <%= render partial: 'favorites/favorite', locals: { bookmark: @bookmark } %>
+    <% end %>
+  
   <% end %>
 </div>
 
