@@ -8,6 +8,9 @@ class BookmarksController < ApplicationController
      @topic = Topic.find(params[:topic_id])
      @bookmark = @topic.bookmarks.build(bookmark_params)
      @topic.bookmarks << @bookmark
+
+     authorize @bookmark
+     
      if @bookmark
       redirect_to @topic, notice: "Topic was saved successfully."
      else
