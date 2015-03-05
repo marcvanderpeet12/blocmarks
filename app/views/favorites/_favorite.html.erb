@@ -4,7 +4,7 @@
       <i class="glyphicon glyphicon-star-empty"> </i>&nbsp; Unlike
     <% end %>
   <% else %>
-    <%= link_to [bookmark, favorite.new], class: 'btn btn-primary', method: :post do %>
+    <%= link_to [bookmark, Favorite.new], class: 'btn btn-primary', method: :post do %>
       <i class="glyphicon glyphicon-star"> </i>&nbsp; Like
     <% end %>
   <% end %>

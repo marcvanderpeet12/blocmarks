@@ -6,7 +6,10 @@ Rails.application.routes.draw do
     resources :bookmarks
   end
 
-  resources :favorites, only: [:create, :destroy]
+
+  resources :bookmarks do
+    resources :favorites, only: [:create, :destroy]
+  end
 
   devise_for :users
   
