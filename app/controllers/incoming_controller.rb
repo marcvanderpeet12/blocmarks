@@ -24,7 +24,7 @@ class IncomingController < ApplicationController
      # @user = User.where(:email => params[:sender]).first_or_create(:password => "#{params[:title]}")
 
 
-     @bookmark = Bookmark.create(topic_id: @topic, user_id: @user, url: "what should be here")
+     @bookmark = Bookmark.create(topic_id: @topic.id, user_id: @user.id, url: @url)
 
     # You put the message-splitting and business
     # magic here. 

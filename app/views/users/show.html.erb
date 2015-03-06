@@ -13,7 +13,8 @@
 <h4>You have <%= @count %> favorites</h4>
 
   <% @liked_bookmarks.each do |fav_book| %>
-   <p> <%= fav_book.bookmark_id %> </p>
+    <% next unless fav_book.bookmark %>
+   <p> <%= fav_book.bookmark.url %> </p>
   <% end %>
 
   

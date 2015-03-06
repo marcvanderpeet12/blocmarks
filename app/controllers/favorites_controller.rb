@@ -19,9 +19,8 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @bookmark = Bookmark.find(params[:post_id])
-    favorite = current_user.favorited(@bookmark)
-
+    @bookmark = Bookmark.find(params[:bookmark_id])
+    favorite = current_user.favorites.find(params[:id])
     if favorite.destroy
       flash[:notice] = "You have unfavorited this post."
     else

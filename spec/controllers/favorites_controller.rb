@@ -8,6 +8,8 @@ describe FavoritesController do
   before do
     @bookmark = associated_bookmark
     @user = authenticated_user
+    #documnet this!
+    request.env["HTTP_REFERER"] = "test.local"
     sign_in @user
   end
 

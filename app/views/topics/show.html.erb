@@ -24,9 +24,8 @@
     </p>
 
 
-     <%  if false %>
-      <%= render partial: 'favorites/favorite', locals: { bookmark: @bookmark } %>
-     <% end %>
+     
+      <%= render partial: 'favorites/favorite', locals: { favorite: @favorite, bookmark: @bookmark } %>
   <% end %>
 </div>
 

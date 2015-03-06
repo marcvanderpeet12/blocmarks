@@ -23,6 +23,7 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     @bookmarks = @topic.bookmarks
     @bookmark = Bookmark.find(params[:id])
+    @favorite = current_user.favorites.find_by(bookmark_id: @bookmark)
   end
 
 
