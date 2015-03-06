@@ -1,0 +1,19 @@
+<h2>My bookmarks </h2>
+  
+  <p>
+   <% @user_topics.each do |topic|%>
+    <p> <h3> <%= topic.title %> </h3> </p>
+      <% topic.bookmarks.each do |bookmark| %>
+       <h4> <%= bookmark.url %> </h4>
+      <% end %>
+    <% end %>
+  </p> 
+
+<h2>My liked bookmarks </h2>
+<h4>You have <%= @count %> favorites</h4>
+
+  <% @liked_bookmarks.each do |fav_book| %>
+   <p> <%= fav_book.bookmark_id %> </p>
+  <% end %>
+
+  

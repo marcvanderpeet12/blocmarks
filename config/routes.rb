@@ -2,9 +2,13 @@ Rails.application.routes.draw do
 
 
 
+  get 'users/show'
+
   resources :topics do
     resources :bookmarks
   end
+
+  # resources :users, only: [:show]
 
 
   resources :bookmarks do

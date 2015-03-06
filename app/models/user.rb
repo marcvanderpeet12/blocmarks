@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
 
   has_many :topics
   has_many :favorites
+  has_many :bookmarks
+  has_many :bookmarks, through: :favorites
+
+
   
        def liked(bookmark)
         favorites.where(bookmark_id: bookmark.id).first
