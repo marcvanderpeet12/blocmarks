@@ -1,0 +1,17 @@
+<div class="container">
+   <%= link_to "New topic", new_topic_path, class: 'btn btn-default' %>
+   <br/>
+   <br/>
+   
+  <div> 
+  <% @topics.each do |topic| %>
+
+   <%= link_to topic.title, topic %>
+    <div class="bookmarksbox">
+     <p><% topic.bookmarks.each do |bookmark| %>
+      <%= bookmark.url %>
+     <% end %> </p>
+   </div>
+  <% end %>
+ </div>
+</div>
