@@ -1,17 +1,18 @@
 <div class="container">
-   <%= link_to "New topic", new_topic_path, class: 'btn btn-default' %>
+   <br/>
+   <%= link_to "New topic", new_topic_path, class: 'btn btn-primary' %>
    <br/>
    <br/>
-   
-  <div> 
-  <% @topics.each do |topic| %>
 
+
+  <% @topics.each do |topic| %>
+  <div class="well">
    <%= link_to topic.title, topic %>
-    <div class="bookmarksbox">
-     <p><% topic.bookmarks.each do |bookmark| %>
-      <%= bookmark.url %>
+      <p><% topic.bookmarks.each do |bookmark| %>
+      <li><%= bookmark.url %> </li>
      <% end %> </p>
-   </div>
+  </div>
+
   <% end %>
  </div>
 </div>

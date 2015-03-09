@@ -1,13 +1,26 @@
-<h2>My bookmarks </h2>
+
+<div class="header">
+ <h2>My bookmarks </h2>
+</div>
+<div class="container">
   
   <p>
    <% @user_topics.each do |topic|%>
-    <p> <h3> <%= topic.title %> </h3> </p>
+     <div class="well"> 
+      <p> <h3> <%= topic.title %> </h3> </p>
+     </div> 
+     
+    <div class="row">
       <% topic.bookmarks.each do |bookmark| %>
-       <h4> <%= bookmark.url %> </h4>
+        <div class="col-xs-3 .col-md-4"> 
+          <h4> <%= bookmark.url %> </h4>
+        </div>
       <% end %>
+    </div>
+
     <% end %>
-  </p> 
+
+</div>
 
 <h2>My liked bookmarks </h2>
 <h4>You have <%= @count %> favorites</h4>
