@@ -1,0 +1,38 @@
+
+<div class="container">
+   <h3>Topics: </h3>
+   <div class="well">
+    <h1> <%= @topic.title %> </h1>
+    <div>
+      <%= link_to "Edit topic", edit_topic_path(@topic), class: 'btn btn-danger' %> 
+      <%= link_to "Destroy topic", @topic, method: :delete, class: 'btn btn-danger' %>
+     </div>
+    </div>
+
+   <br/>
+   <br/>
+
+   <h3>Bookmarks: </h3>
+   
+<div class="well">
+ <div class="bookmark">
+
+  <% @bookmarks.each do |bookmark| %>
+    <p>  
+     <%= link_to bookmark.url %>
+     <br/>
+     <%= link_to "Edit bookmark", edit_topic_bookmark_path(@topic, bookmark), class: "btn btn-danger btn-xs"  %>
+     <%= link_to "Destroy bookmark", [@topic, bookmark], method: :delete, class: "btn btn-danger btn-xs" %>
+    </p>
+
+      <%= render partial: 'favorites/favorite', locals: { favorite: @favorite, bookmark: @bookmark } %>
+      
+      <br/>
+
+  <% end %>
+  </div>
+
+  <%= link_to "New bookmark", new_topic_bookmark_path(@topic), class: 'btn btn-primary' %>
+ </div>
+</div>
+

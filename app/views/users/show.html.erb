@@ -1,0 +1,33 @@
+
+<div class="header">
+ <h2>My bookmarks </h2>
+</div>
+<div class="container">
+  
+  <p>
+   <% @user_topics.each do |topic|%>
+     <div class="well"> 
+      <p> <h3> <%= topic.title %> </h3> </p>
+     </div> 
+     
+    <div class="row">
+      <% topic.bookmarks.each do |bookmark| %>
+        <div class="col-xs-3 .col-md-4"> 
+          <h4> <%= bookmark.url %> </h4>
+        </div>
+      <% end %>
+    </div>
+
+    <% end %>
+
+</div>
+
+<h2>My liked bookmarks </h2>
+<h4>You have <%= @count %> favorites</h4>
+
+  <% @liked_bookmarks.each do |fav_book| %>
+    <% next unless fav_book.bookmark %>
+   <p> <%= fav_book.bookmark.url %> </p>
+  <% end %>
+
+  
